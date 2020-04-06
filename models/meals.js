@@ -21,7 +21,7 @@ mealSchema.virtual('imageSrc').get(function () {
       this.imageBufType
     };charset=utf-8;base64,${this.imageBuf.toString('base64')}`;
   } else {
-    throw new Error('image data not found');
+    throw new Error('virtual image data not found');
   }
 });
 

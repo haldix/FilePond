@@ -4,17 +4,18 @@ const btnSubmit = document.getElementById('submit-btn');
 const btnProxy = document.getElementById('proxy-btn');
 btnProxy.addEventListener('click', submitForm);
 const title = document.getElementById('title');
+const hiddenInput = document.getElementById('hidden-input');
 
-function submitImg() {
+function submitImg(id) {
+  hiddenInput.value = id;
   btnSubmit.click();
-  console.log('clicked');
 }
 
-function submitForm() {
-  console.log('fn sR');
+async function submitForm() {
   val = title.value;
   const body = { title: val };
 
   url = '/form';
-  ajax(url, 'POST', body);
+  const resData = await ajax(url, 'POST', body);
+  submitImg(resData._id);
 }

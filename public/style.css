@@ -5,3 +5,11 @@
 div {
   margin-bottom: 10px;
 }
+
+.img-cont {
+  width: 50%;
+}
+
+img {
+  width: 100%;
+}

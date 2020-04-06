@@ -17,8 +17,7 @@ async function ajax(url, method = 'GET', body = null) {
     //   window.location = `/meals/saved/${id}`;
     // }
     console.log('data', data);
-    console.log('ID', data._id);
-    submitImg(data.id);
+    return data;
   } catch (err) {
     //TODO: make sure network errs are covered
     console.error(err);
